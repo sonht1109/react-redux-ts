@@ -1,11 +1,11 @@
 import React, { ReactElement } from "react";
 import { IntlProvider } from "react-intl";
 import { useSelector } from "react-redux";
-import { selectAppStore } from "./store/selecters";
 // json
 import vi from "assets/languages/vi.json";
 import en from "assets/languages/en.json";
 import useCountRenders from "hooks/useCountRenders";
+import { appSelector } from "./store";
 
 const translatesJson = {
   vi: vi,
@@ -19,7 +19,7 @@ interface Props {
 }
 
 export default function LanguageProvider({ children }: Props): ReactElement {
-  const { lang } = useSelector(selectAppStore);
+  const { lang } = useSelector(appSelector);
 
   useCountRenders("LanguageProvider");
 

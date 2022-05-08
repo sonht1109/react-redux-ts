@@ -1,11 +1,6 @@
-import {
-  createStore,
-  applyMiddleware,
-  compose,
-  combineReducers,
-} from 'redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import App from 'containers/App/store/reducers';
+import { appReducer } from 'containers/App/store';
 
 const hasExtension =
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
@@ -15,7 +10,7 @@ const composeWith = hasExtension
   : compose(applyMiddleware(thunk));
 
 const staticReducers = {
-  App: App,
+  app: appReducer,
 };
 
 // Configure the store

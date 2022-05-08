@@ -1,21 +1,19 @@
-import React from 'react';
 import { GlobalStyle } from 'styles/global-styles';
 import { ThemeProvider } from 'styled-components';
 // css style configs
 import theme from 'styles/theme';
 import 'styles/fonts.css'; // import config font define
-import 'sweetalert2/dist/sweetalert2.min.css';
 // diff import
 import Home from 'containers/Home';
-import Loading from 'components/Loading';
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NotFoundPage from 'components/NotFoundPage';
-import { selectAppStore } from './store/selecters';
 import LanguageProvider from './LanguageProvider';
+import { appSelector } from './store';
+import Loading from 'components/Loading';
 
 function App() {
-  const { loading } = useSelector(selectAppStore);
+  const { loading } = useSelector(appSelector);
 
   return (
     <LanguageProvider>
@@ -32,7 +30,7 @@ function App() {
           </Switch>
         </Router>
         {/* // extra config global */}
-        <Loading active={loading} />
+        {loading && <Loading />}
         <GlobalStyle />
       </ThemeProvider>
     </LanguageProvider>

@@ -1,24 +1,11 @@
-/**
- * This file export all of type the Reducers
- * File is export only type, not the logic
- * phamthainb
- */
-
-import { combineReducers } from "redux";
-import App from "containers/App/store/reducers";
-import Home from "containers/Home/store/reducers";
-import About from "containers/About/store/reducers";
-// [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
-
-
+import { combineReducers } from 'redux';
+import { appReducer } from 'containers/App/store';
+// [IMPORT NEW REDUCERS]
 
 //pages
 const rootReducer = combineReducers({
-  App,
-  Home,
-  About,
-  // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
-
-  });
+  app: appReducer,
+  // [COMBINE NEW REDUCERS]
+});
 
 export default rootReducer;

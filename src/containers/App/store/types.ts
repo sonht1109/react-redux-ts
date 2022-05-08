@@ -11,6 +11,6 @@ export type AppStore = {
   lang: AppLanguage;
 };
 
-export type ActionsApp = ActionType<typeof actions>;
+export type AppAction = ActionType<typeof actions>;
 
 export type AppLanguage = "vi" | "en";

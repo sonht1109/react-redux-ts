@@ -1,3 +1,6 @@
+# React redux typescript template
+## This template is forked and updated from [phamthainb repo](https://github.com/phamthainb/react-typescript)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -5,6 +8,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run generate`
+Auto generate component/container files.
 
 ### `yarn start`
 
@@ -44,5 +50,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-# react-redux-ts
-# react-redux-ts

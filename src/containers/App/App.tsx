@@ -11,6 +11,8 @@ import NotFoundPage from 'components/NotFoundPage';
 import LanguageProvider from './LanguageProvider';
 import { appSelector } from './store';
 import Loading from 'components/Loading';
+import { Toaster } from 'react-hot-toast';
+import GlobalSetup from 'components/Layout/GlobalSetup';
 
 function App() {
   const { loading } = useSelector(appSelector);
@@ -18,6 +20,7 @@ function App() {
   return (
     <LanguageProvider>
       <ThemeProvider theme={theme}>
+        <GlobalSetup />
         <Router>
           <Switch>
             <Route exact path="/">
@@ -32,6 +35,13 @@ function App() {
         {/* // extra config global */}
         {loading && <Loading />}
         <GlobalStyle />
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            duration: 4000,
+          }}
+          reverseOrder={false}
+        />
       </ThemeProvider>
     </LanguageProvider>
   );

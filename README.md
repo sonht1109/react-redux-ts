@@ -1,5 +1,5 @@
 # React redux typescript template
-## This template is forked and updated from [phamthainb repo](https://github.com/phamthainb/react-typescript)
+## This template is forked and updated from [phamthainb's template](https://github.com/phamthainb/react-typescript)
 
 # Getting Started with Create React App
 

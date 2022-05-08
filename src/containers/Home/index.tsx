@@ -7,7 +7,7 @@
 import React, { memo } from 'react';
 import ErrorBound from 'components/ErrorBound';
 import { useForm } from 'react-hook-form';
-import Loading from 'components/Loading';
+import toast from 'react-hot-toast';
 
 interface Props {}
 
@@ -21,6 +21,7 @@ function Home({}: Props) {
   const { register, handleSubmit } = useForm<LoginFormData>();
   const onSubmit = (data: LoginFormData) => {
     console.log(data);
+    toast.success('Welcome')
   };
 
   return (
@@ -38,7 +39,6 @@ function Home({}: Props) {
         </div>
         <button type="submit">Login test</button>
       </form>
-      <Loading />
     </ErrorBound>
   );
 }

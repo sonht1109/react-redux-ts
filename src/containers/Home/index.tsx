@@ -17,11 +17,10 @@ type LoginFormData = {
 };
 // eslint-disable-next-line
 function Home({}: Props) {
-
   const { register, handleSubmit } = useForm<LoginFormData>();
+
   const onSubmit = (data: LoginFormData) => {
-    console.log(data);
-    toast.success('Welcome')
+    toast.success('Welcome');
   };
 
   return (
@@ -37,7 +36,7 @@ function Home({}: Props) {
             ref={register({ required: true })}
           />
         </div>
-        <button type="submit">Login test</button>
+        <button type="submit">SUBMIT</button>
       </form>
     </ErrorBound>
   );

@@ -9,6 +9,7 @@ const useDidUpdate = (cb: () => void, deps?: any[]) => {
     } else {
       refMounted.current = true;
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 };
 

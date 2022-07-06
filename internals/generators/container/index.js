@@ -34,6 +34,12 @@ module.exports = {
         templateFile: "./container/index.tsx.hbs",
         abortOnFail: true,
       },
+      {
+        type: "add",
+        path: defaultPath + "styles.ts",
+        templateFile: "./container/styles.ts.hbs",
+        abortOnFail: true,
+      },
     ];
 
     const reducerActions = [

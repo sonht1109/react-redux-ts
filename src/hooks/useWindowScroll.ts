@@ -17,10 +17,10 @@ const getPosition = (): Position => {
 const scrollTo = ({ x, y }: PartialPosition) => {
   if (typeof window !== 'undefined') {
     const options: ScrollToOptions = { behavior: 'smooth' };
-    if (x) {
+    if (x && typeof x === 'number') {
       options.left = x;
     }
-    if (y) {
+    if (y && typeof y === 'number') {
       options.top = y;
     }
     window.scrollTo(options);

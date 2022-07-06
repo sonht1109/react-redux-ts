@@ -15,12 +15,12 @@ type LoginFormData = {
   phone: string;
   password: string;
 };
-// eslint-disable-next-line
+
 function Home({}: Props) {
   const { register, handleSubmit } = useForm<LoginFormData>();
 
   const onSubmit = (data: LoginFormData) => {
-    toast.success('Welcome');
+    toast.success(JSON.stringify(data));
   };
 
   return (

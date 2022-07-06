@@ -1,4 +1,9 @@
+/*
+ * {{properCase name}}
+ */
+ 
 import ErrorBound from 'components/ErrorBound';
+import { S{{properCase name}} } from './styles';
 {{#if reducer}}
 import { {{camelCase name}}Reducer } from './store';
 import useInjectReducer from 'redux/useInjectReducer';
@@ -15,7 +20,7 @@ export default function {{properCase name}} (props: Props) {
 
   return (
     <ErrorBound>
-      <div></div>
+      <S{{properCase name}}></S{{properCase name}}>
     </ErrorBound>
   )
 }

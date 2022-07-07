@@ -8,6 +8,7 @@ import React, { memo } from 'react';
 import ErrorBound from 'components/ErrorBound';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import { range } from 'utils';
 
 interface Props {}
 

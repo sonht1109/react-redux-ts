@@ -1,5 +1,4 @@
 import Home from 'containers/Home';
-import React from 'react';
 
 export interface ItemRoute {
   name: string;
@@ -9,7 +8,7 @@ export interface ItemRoute {
   child?: ItemRoute[];
 }
 
-const ROUTES = [
+const routes = [
   {
     name: 'Trang chủ',
     private: false,
@@ -18,4 +17,4 @@ const ROUTES = [
   },
 ];
 
-export default ROUTES;
+export default routes;

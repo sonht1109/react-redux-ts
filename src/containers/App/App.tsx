@@ -4,7 +4,6 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
 import 'styles/fonts.css'; // import config font define
 // diff import
-import Home from 'containers/Home';
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NotFoundPage from 'components/NotFoundPage';
@@ -13,6 +12,7 @@ import { appSelector } from './store';
 import Loading from 'components/Loading';
 import { Toaster } from 'react-hot-toast';
 import GlobalSetup from 'components/Layout/GlobalSetup';
+import MapRoutes from './MapRoutes';
 
 function App() {
   const { loading } = useSelector(appSelector);
@@ -23,10 +23,7 @@ function App() {
         <GlobalSetup />
         <Router>
           <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-
+            <MapRoutes />
             <Route path="*">
               <NotFoundPage />
             </Route>

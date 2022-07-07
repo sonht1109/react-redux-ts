@@ -33,7 +33,7 @@ module.exports = {
       },
       {
         type: "add",
-        path: path + `types.tsx`,
+        path: path + `types.ts`,
         templateFile: "./component/types.ts.hbs",
         abortOnFail: true,
       },

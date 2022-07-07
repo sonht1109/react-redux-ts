@@ -1,10 +1,8 @@
-interface Props {
+import { LayoutProps } from './types';
 
-}
+const Layout = (props: LayoutProps) => {
+  return <div></div>;
+};
 
-const Layout = (props: Props) => {
-  return <div></div>
-}
-
-export default Layout
+export default Layout;
 Layout.displayName = Layout;

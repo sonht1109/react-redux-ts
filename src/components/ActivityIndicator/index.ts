@@ -1,3 +1,2 @@
-import ActityIndicator from './ActityIndicator'
-
-export default ActityIndicator;
+export { default } from './ActityIndicator';
+export * from './types';

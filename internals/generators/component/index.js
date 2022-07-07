@@ -31,6 +31,12 @@ module.exports = {
         templateFile: "./component/component.tsx.hbs",
         abortOnFail: true,
       },
+      {
+        type: "add",
+        path: path + `types.tsx`,
+        templateFile: "./component/types.ts.hbs",
+        abortOnFail: true,
+      },
     ];
   },
 };

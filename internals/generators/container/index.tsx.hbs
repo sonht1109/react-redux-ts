@@ -2,7 +2,6 @@
  * {{properCase name}}
  */
  
-import ErrorBound from 'components/ErrorBound';
 import { S{{properCase name}} } from './styles';
 {{#if reducer}}
 import { {{camelCase name}}Reducer } from './store';
@@ -19,9 +18,7 @@ export default function {{properCase name}} (props: Props) {
   {{/if}}
 
   return (
-    <ErrorBound>
-      <S{{properCase name}}></S{{properCase name}}>
-    </ErrorBound>
+    <S{{properCase name}}></S{{properCase name}}>
   )
 }
 

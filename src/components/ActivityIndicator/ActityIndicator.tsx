@@ -1,9 +1,5 @@
 import styled, { keyframes } from "styled-components";
-
-interface Props {
-  size: 'sm' | 'md' | 'lg' | 'xl';
-  color?: string;
-}
+import { ActivityIndicatorProps } from "./types";
 
 const indicatorSize = {
   sm: {
@@ -34,7 +30,7 @@ const indicatorAnimation = keyframes`
 `;
 
 
-const ActivityIndicator = styled.div<Props>`
+const ActivityIndicator = styled.div<ActivityIndicatorProps>`
   margin: auto;
   width: ${props => indicatorSize[props.size].size + 'px'};
   height: ${props => indicatorSize[props.size].size + 'px'};

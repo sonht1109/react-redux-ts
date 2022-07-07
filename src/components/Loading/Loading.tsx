@@ -2,12 +2,12 @@ import ActityIndicator from 'components/ActivityIndicator';
 import styled from 'styled-components';
 import mixins from 'styles/mixins';
 
-interface Props {}
-
-const Loading = (props: Props) => {
-  return <SLoading>
-    <ActityIndicator size="md" />
-  </SLoading>;
+const Loading = () => {
+  return (
+    <SLoading>
+      <ActityIndicator size="md" />
+    </SLoading>
+  );
 };
 
 export default Loading;

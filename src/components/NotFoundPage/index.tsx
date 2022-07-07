@@ -6,10 +6,7 @@
 import React, { memo } from "react";
 import styled from "styled-components";
 
-interface Props {}
-
-// eslint-disable-next-line
-function NotFoundPage({}: Props) {
+function NotFoundPage() {
   return <StylesNotFoundPage>NotFoundPage</StylesNotFoundPage>;
 }
 const StylesNotFoundPage = styled.div``;

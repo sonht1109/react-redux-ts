@@ -1,7 +1,9 @@
 import { LayoutProps } from './types';
 
 const Layout = (props: LayoutProps) => {
-  return <div></div>;
+  const { children } = props;
+
+  return <>{children}</>;
 };
 
 export default Layout;

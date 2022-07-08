@@ -4,11 +4,10 @@
  *
  */
 
+import Layout from 'components/Layout';
 import React, { memo } from 'react';
-import ErrorBound from 'components/ErrorBound';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { range } from 'utils';
 
 interface Props {}
 
@@ -25,7 +24,7 @@ function Home({}: Props) {
   };
 
   return (
-    <ErrorBound>
+    <Layout>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <input type="text" name="phone" ref={register({ required: true })} />
@@ -39,7 +38,7 @@ function Home({}: Props) {
         </div>
         <button type="submit">SUBMIT</button>
       </form>
-    </ErrorBound>
+    </Layout>
   );
 }
 

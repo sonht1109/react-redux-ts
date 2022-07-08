@@ -1,3 +1,5 @@
+export const STORAGE_TOKEN_KEY = 'token';
+
 export const VALIDATE_MESSAGE = {
   NO_DATA: 'no_data',
   REQUIRED: 'required',

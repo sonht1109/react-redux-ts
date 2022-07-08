@@ -1,34 +1,28 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { CheckboxProps } from './types';
 
-export const SCheckbox = styled.div<{ checked: boolean }>`
-  user-select: none;
-  display: flex;
-  align-items: center;
+type CheckboxStyleProps = Exclude<CheckboxProps, 'onChange'>;
+
+export const SCheckbox = styled.div<CheckboxStyleProps>`
   cursor: pointer;
-
-  .checkbox {
-    margin: 0;
-    transition: 0.15s ease-out;
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
-    border-color: ${({ checked }) => (checked ? '#00CB82' : '#A6B0CF')};
-    border-width: ${({ checked }) => (checked ? '8px' : '1px')};
-    border-style: solid;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-  }
-
-  .label {
-    margin-left: 8px;
-  }
+  box-sizing: border-box;
+  transition: 0.15s ease-out;
+  width: ${({ size }) => size}px;
+  min-width: ${({ size }) => size}px;
+  height: ${({ size }) => size}px;
+  border-radius: ${({ borderRadius }) => borderRadius}px;
+  border-color: ${({ checked, activeColor, color }) =>
+    checked ? activeColor : color};
+  border-width: ${({ checked, size = 16, borderWidth }) =>
+    checked ? size / 2 : borderWidth}px;
+  border-style: solid;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 
   &:hover {
-    .checkbox {
-      border-color: #00cb82;
-    }
+    border-color: ${({ activeColor }) => activeColor};
   }
 `;

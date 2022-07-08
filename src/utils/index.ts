@@ -14,3 +14,5 @@ export const range = function (start = 0, stop?: number, step = 1) {
   }
   return res;
 };
+
+export const getPublic = (url: string) => `${process.env.REACT_APP_SERVER_URL}${url}`

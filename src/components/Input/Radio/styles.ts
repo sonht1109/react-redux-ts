@@ -1,6 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { RadioProps } from './types';
 
-export const SRadio = styled.div`
+type RadioStyleProps = Exclude<RadioProps, 'checked' | 'onChange'>;
+
+export const SRadio = styled.div<RadioStyleProps>`
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -8,52 +11,43 @@ export const SRadio = styled.div`
   width: fit-content;
 
   .radio {
-    width: 14px;
-    height: 14px;
-    min-width: 14px;
-    border-radius: 8px;
+    box-sizing: border-box;
+    width: ${({ size }) => size}px;
+    height: ${({ size }) => size}px;
+    min-width: ${({ size }) => size}px;
+    border-radius: 50%;
     background-color: white;
-    border: 1px solid;
+    border: ${({ borderWidth }) => borderWidth}px solid;
     position: relative;
-    margin-right: 8px;
     &:after {
-      content: "";
+      content: '';
       position: absolute;
-      top: 2px;
-      left: 2px;
-      width: 10px;
-      height: 10px;
-      min-width: 5px;
-      border-radius: 5px;
+      inset: ${({ inset }) => inset}px;
+      border-radius: 50%;
       transform: scale(0);
       transition: 0.1s;
-      background-color: #9ab1cc;
+      background-color: ${({ color }) => color};
     }
   }
   &:not(.checked) {
     .radio {
-      border-color: #9ab1cc;
+      border-color: ${({ color }) => color};
     }
   }
   &:not(.checked) {
     &:hover {
       .radio {
-        border-color: #00cb82;
+        border-color: ${({ activeColor }) => activeColor};
       }
     }
   }
   &.checked {
     .radio {
-      border-color: #00cb82;
+      border-color: ${({ activeColor }) => activeColor};
       &:after {
         transform: scale(1);
-        background-color: #00cb82;
+        background-color: ${({ activeColor }) => activeColor};
       }
     }
-  }
-  .label {
-    font-size: 16px;
-    line-height: 24px;
-    user-select: none;
   }
 `;

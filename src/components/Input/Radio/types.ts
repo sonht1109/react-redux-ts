@@ -1,5 +1,9 @@
 export interface RadioProps {
   checked?: boolean;
-  onChange?: () => void;
-  label?: string;
+  activeColor?: string;
+  color?: string;
+  borderWidth?: number;
+  size?: number;
+  inset?: number;
+  onChange?: (val: boolean) => void;
 }

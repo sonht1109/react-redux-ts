@@ -1,7 +1,8 @@
 import { Redirect, Route, RouteProps } from 'react-router-dom';
+import { STORAGE_TOKEN_KEY } from 'utils/constants';
 
 const CheckRoute = ({ children }: { children: any }) => {
-  if (!localStorage.getItem('token')) {
+  if (!localStorage.getItem(STORAGE_TOKEN_KEY)) {
     return <Redirect to="/login" />;
   }
   return children;

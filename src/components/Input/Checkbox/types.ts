@@ -1,5 +1,9 @@
 export interface CheckboxProps {
-  checked: boolean;
-  onChange?: () => void;
-  label?: string;
+  checked?: boolean;
+  activeColor?: string;
+  color?: string;
+  size?: number;
+  borderWidth?: number;
+  onChange?: (val: boolean) => void;
+  borderRadius?: number;
 }

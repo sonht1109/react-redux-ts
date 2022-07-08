@@ -4,7 +4,9 @@
  *
  */
 
+import { Checkbox, Radio } from 'components/Input';
 import Layout from 'components/Layout';
+import useDisclosure from 'hooks/useDisclosure';
 import React, { memo } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -23,6 +25,8 @@ function Home({}: Props) {
     toast.success(JSON.stringify(data));
   };
 
+  const [state, handler] = useDisclosure(false)
+
   return (
     <Layout>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -38,6 +42,9 @@ function Home({}: Props) {
         </div>
         <button type="submit">SUBMIT</button>
       </form>
+
+      <Radio checked={state} onChange={handler.toggle} />
+      <Checkbox checked={state} onChange={handler.toggle} />
     </Layout>
   );
 }

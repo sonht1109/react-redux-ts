@@ -5,8 +5,6 @@ import theme from 'styles/theme';
 import 'styles/fonts.css'; // import config font define
 // diff import
 import { useSelector } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import NotFoundPage from 'components/NotFoundPage';
 import LanguageProvider from './LanguageProvider';
 import { appSelector } from './store';
 import Loading from 'components/Loading';
@@ -21,14 +19,7 @@ function App() {
     <LanguageProvider>
       <ThemeProvider theme={theme}>
         <GlobalSetup />
-        <Router>
-          <Switch>
-            <MapRoutes />
-            <Route path="*">
-              <NotFoundPage />
-            </Route>
-          </Switch>
-        </Router>
+        <MapRoutes />
         {/* // extra config global */}
         {loading && <Loading />}
         <GlobalStyle />

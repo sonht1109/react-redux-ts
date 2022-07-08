@@ -25,20 +25,16 @@ function Home({}: Props) {
     toast.success(JSON.stringify(data));
   };
 
-  const [state, handler] = useDisclosure(false)
+  const [state, handler] = useDisclosure(false);
 
   return (
     <Layout>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <input type="text" name="phone" ref={register({ required: true })} />
+          <input type="text" {...register('phone', { required: true })} />
         </div>
         <div>
-          <input
-            type="text"
-            name="password"
-            ref={register({ required: true })}
-          />
+          <input type="text" {...register('password', { required: true })} />
         </div>
         <button type="submit">SUBMIT</button>
       </form>

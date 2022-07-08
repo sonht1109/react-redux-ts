@@ -2,10 +2,11 @@
  * LazyComponent
  */
 
+import { Suspense } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { LazyComponentProps } from './types';
 
-const LazyComponent = (props: LazyComponentProps) => {
+export const LazyLoading = (props: LazyComponentProps) => {
   const { color = '#5dbbfb' } = props;
 
   return (
@@ -16,6 +17,10 @@ const LazyComponent = (props: LazyComponentProps) => {
     </SComponentLazy>
   );
 };
+
+const LazyComponent = ({ children }: { children: JSX.Element }) => (
+  <Suspense fallback={<LazyLoading />}>{children}</Suspense>
+);
 
 export default LazyComponent;
 LazyComponent.displayName = LazyComponent;

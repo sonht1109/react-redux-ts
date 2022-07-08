@@ -1,17 +1,29 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 import routes from 'utils/routes';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NotFoundPage from 'components/NotFoundPage';
+import ProtectRoute from 'components/ProtectRoute';
 
 export default function MapRoutes() {
   return (
-    <>
-      {React.Children.toArray(
-        routes.map(r => (
-          <Route exact path={r.path}>
-            {r.component}
-          </Route>
-        )),
-      )}
-    </>
+    <BrowserRouter>
+      <Routes>
+        {React.Children.toArray(
+          routes.map(r => (
+            <Route
+              path={r.path}
+              element={
+                r.private ? (
+                  <ProtectRoute>{r.component()}</ProtectRoute>
+                ) : (
+                  r.component()
+                )
+              }
+            />
+          )),
+        )}
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

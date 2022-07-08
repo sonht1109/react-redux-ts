@@ -5,7 +5,6 @@
  */
 
 import Layout from 'components/Layout';
-import useOS from 'hooks/useOS';
 import React, { memo } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -23,8 +22,6 @@ function Home({}: Props) {
   const onSubmit = (data: LoginFormData) => {
     toast.success(JSON.stringify(data));
   };
-
-  useOS()
 
   return (
     <Layout>

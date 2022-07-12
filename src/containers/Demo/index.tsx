@@ -11,6 +11,6 @@ interface Props {
 export default function Demo (props: Props) {
 
   return (
-    <SDemo></SDemo>
+    <SDemo>Demo</SDemo>
   )
 }

@@ -1,37 +1,59 @@
 import { LazyComponent } from 'components/Loading';
 import { lazy } from 'react';
+
+// YOU SHOULD IMPORT AS LAZY HERE
 const Home = lazy(() => import('containers/Home'));
 const Demo = lazy(() => import('containers/Demo'));
 
 export interface ItemRoute {
-  name: string;
+  name?: string;
   private: boolean;
-  component?: () => JSX.Element;
-  path?: string;
-  child?: ItemRoute[];
-  index?: boolean;
+  element?: () => JSX.Element;
+  path: string;
+  children?: ItemRoute[];
+  index?: boolean; // read react-route-dom v6 for more information about "index"
 }
 
-const routes = [
+const routes: ItemRoute[] = [
   {
-    name: 'Trang chủ',
     private: false,
-    component: () => (
+    path: '/',
+    element: () => (
       <LazyComponent>
         <Home />
       </LazyComponent>
     ),
-    path: '/',
-  },
-  {
-    name: 'Demo',
-    private: true,
-    component: () => (
-      <LazyComponent>
-        <Demo />
-      </LazyComponent>
-    ),
-    path: '/demo',
+    children: [
+      {
+        private: true,
+        element: () => (
+          <LazyComponent>
+            <Demo />
+          </LazyComponent>
+        ),
+        path: 'child',
+        children: [
+          {
+            private: false,
+            element: () => (
+              <LazyComponent>
+                <Home />
+              </LazyComponent>
+            ),
+            path: 'grandchild1',
+          },
+          {
+            private: true,
+            element: () => (
+              <LazyComponent>
+                <Demo />
+              </LazyComponent>
+            ),
+            path: 'grandchild2/:id',
+          },
+        ],
+      },
+    ],
   },
 ];
 

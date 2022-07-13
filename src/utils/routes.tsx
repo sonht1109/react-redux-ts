@@ -26,30 +26,30 @@ const routes: ItemRoute[] = [
     children: [
       {
         private: true,
+        path: 'child',
         element: () => (
           <LazyComponent>
             <Demo />
           </LazyComponent>
         ),
-        path: 'child',
         children: [
           {
             private: false,
+            path: 'grandchild1',
             element: () => (
               <LazyComponent>
                 <Home />
               </LazyComponent>
             ),
-            path: 'grandchild1',
           },
           {
             private: true,
+            path: 'grandchild2/:id',
             element: () => (
               <LazyComponent>
                 <Demo />
               </LazyComponent>
             ),
-            path: 'grandchild2/:id',
           },
         ],
       },

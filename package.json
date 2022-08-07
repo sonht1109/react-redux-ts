@@ -78,7 +78,7 @@
     "typescript": "^4.0.3"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
+    "/src/**/*.{ts,tsx}": [
       "npx prettier --write",
       "npx eslint --fix"
     ]

@@ -31,8 +31,8 @@
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "postinstall": "husky install",
-    "lint": "eslint \"src/**/*.{ts,tsx}\" --fix",
-    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "lint": "eslint --fix",
+    "format": "prettier --write",
     "precommit": "lint-staged"
   },
   "eslintConfig": {
@@ -78,15 +78,9 @@
     "typescript": "^4.0.3"
   },
   "lint-staged": {
-    "*.ts": [
+    "src/**/*.{js,jsx,ts,tsx}":[
       "npm run lint",
-      "npm run format",
-      "git add ."
-    ],
-    "*.tsx": [
-      "npm run lint",
-      "npm run format",
-      "git add ."
+      "npm run format"
     ]
   }
 }

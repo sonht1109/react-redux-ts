@@ -16,6 +16,7 @@ function App() {
   const { loading } = useSelector(appSelector);
 
   const X = '123';
+  const Y = '123';
 
   return (
     <LanguageProvider>

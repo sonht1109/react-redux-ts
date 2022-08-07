@@ -15,6 +15,8 @@ import { appSelector } from './store';
 function App() {
   const { loading } = useSelector(appSelector);
 
+  const X = '123';
+
   return (
     <LanguageProvider>
       <ThemeProvider theme={theme}>

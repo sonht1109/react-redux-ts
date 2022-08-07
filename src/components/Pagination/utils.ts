@@ -5,11 +5,11 @@ export const paging = (
   totalPage: number,
   delta: number,
 ): { label: string; value: number }[] => {
-  let range: number[] = [],
+  const range: number[] = [],
     rangeWithDots: { label: string; value: number }[] = [],
     left = current - delta,
-    right = current + delta,
-    l = 0;
+    right = current + delta;
+  let l = 0;
 
   // init array of page which can be shown
   for (let i = 1; i <= totalPage; i++) {
@@ -19,7 +19,7 @@ export const paging = (
   }
 
   // generate array of page with JUMP_STRING
-  for (let i of range) {
+  for (const i of range) {
     if (l) {
       if (i - l === 2) {
         rangeWithDots.push({ label: (l + 1).toString(), value: l + 1 });

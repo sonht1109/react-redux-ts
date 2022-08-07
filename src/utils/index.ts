@@ -7,7 +7,7 @@ export const range = function (start = 0, stop?: number, step = 1) {
     [start, stop] = [0, start];
   }
 
-  let res = [];
+  const res = [];
 
   for (let i = start; step > 0 ? i < stop : i > stop; i += step) {
     res.push(i);

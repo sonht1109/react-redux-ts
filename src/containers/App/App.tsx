@@ -21,7 +21,6 @@ function App() {
   const A = '123';
   const B = '123';
     const C = '123';
-    const D = '123';
 
   return (
     <LanguageProvider>

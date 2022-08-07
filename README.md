@@ -1,4 +1,5 @@
 # React redux typescript template
+
 ## This template is forked and updated from [phamthainb's template](https://github.com/phamthainb/react-typescript)
 
 # Getting Started with Create React App
@@ -10,6 +11,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ### `npm run generate`
+
 Auto generate component/container files.
 
 ### `yarn start`

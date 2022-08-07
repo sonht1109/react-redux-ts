@@ -1,10 +1,10 @@
-import styled, { keyframes } from "styled-components";
-import { ActivityIndicatorProps } from "./types";
+import styled, { keyframes } from 'styled-components';
+import { ActivityIndicatorProps } from './types';
 
 const indicatorSize = {
   sm: {
     size: 20,
-    borderSize: 2
+    borderSize: 2,
   },
   md: {
     size: 30,
@@ -16,9 +16,9 @@ const indicatorSize = {
   },
   xl: {
     size: 60,
-    borderSize: 6
-  }
-}
+    borderSize: 6,
+  },
+};
 
 const indicatorAnimation = keyframes`
   from{
@@ -29,17 +29,17 @@ const indicatorAnimation = keyframes`
   }
 `;
 
-
 const ActivityIndicator = styled.div<ActivityIndicatorProps>`
   margin: auto;
   width: ${props => indicatorSize[props.size].size + 'px'};
   height: ${props => indicatorSize[props.size].size + 'px'};
-  border: ${props => indicatorSize[props.size].borderSize + 'px'} solid ${props => props.color || '#e1e5e9'};
+  border: ${props => indicatorSize[props.size].borderSize + 'px'} solid
+    ${props => props.color || '#e1e5e9'};
   border-radius: 50%;
   position: relative;
   animation: 1s ${indicatorAnimation} linear infinite;
   border-right-color: transparent;
 `;
 
-export default ActivityIndicator
+export default ActivityIndicator;
 ActivityIndicator.displayName = ActivityIndicator;

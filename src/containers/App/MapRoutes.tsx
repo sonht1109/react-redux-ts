@@ -16,7 +16,6 @@ export default function MapRoutes() {
 }
 
 const renderRouter = (r: ItemRoute) => {
-  
   const element = r?.element ? (
     r.private ? (
       <ProtectRoute>{r.element()}</ProtectRoute>

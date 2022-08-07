@@ -1,16 +1,11 @@
 /*
  * Demo
  */
- 
+
 import { SDemo } from './styles';
 
-interface Props {
+interface Props {}
 
-}
-
-export default function Demo (props: Props) {
-
-  return (
-    <SDemo>Demo</SDemo>
-  )
+export default function Demo(props: Props) {
+  return <SDemo>Demo</SDemo>;
 }

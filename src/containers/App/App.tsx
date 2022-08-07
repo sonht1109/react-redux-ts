@@ -15,11 +15,11 @@ import { appSelector } from './store';
 function App() {
   const { loading } = useSelector(appSelector);
 
-  const b = 1
+  const b = 1;
 
   return (
     <LanguageProvider>
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <GlobalSetup />
         <MapRoutes />
         {/* // extra config global */}

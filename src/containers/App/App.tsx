@@ -17,6 +17,7 @@ function App() {
 
   const X = '123';
   const Y = '123';
+  const Z = '123';
 
   return (
     <LanguageProvider>

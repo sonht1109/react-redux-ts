@@ -1,9 +1,9 @@
-import { JUMP_STRING } from "./constants";
+import { JUMP_STRING } from './constants';
 
 export const paging = (
   current: number,
   totalPage: number,
-  delta: number
+  delta: number,
 ): { label: string; value: number }[] => {
   let range: number[] = [],
     rangeWithDots: { label: string; value: number }[] = [],

@@ -8,6 +8,6 @@ export default function useWindowEvent<T extends keyof WindowEventMap>(
   useEffect(() => {
     window.addEventListener(type, listener, options);
     return () => window.removeEventListener(type, listener, options);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 }

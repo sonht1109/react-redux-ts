@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SPagination = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ const SPaginationItemBase = styled.button<{
 }>``;
 
 export const SPaginationItem = styled(SPaginationItemBase)`
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   opacity: ${({ disabled }) => (disabled ? 0.2 : 1)};
   min-width: 20px;
   height: 20px;

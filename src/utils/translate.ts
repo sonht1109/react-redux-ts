@@ -1,4 +1,3 @@
-
 import { createIntl, createIntlCache } from 'react-intl';
 import { translatesJson } from 'containers/App/LanguageProvider';
 import store from '../redux/store';

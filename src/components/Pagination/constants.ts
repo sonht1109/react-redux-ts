@@ -1,1 +1,1 @@
-export const JUMP_STRING = "...";
+export const JUMP_STRING = '...';

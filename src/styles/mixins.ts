@@ -15,7 +15,7 @@ const mixins = {
   clickable: css`
     cursor: pointer;
     user-select: none;
-  `
+  `,
 };
 
 export default mixins;

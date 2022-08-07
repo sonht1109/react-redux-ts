@@ -1,16 +1,16 @@
-import { GlobalStyle } from 'styles/global-styles';
 import { ThemeProvider } from 'styled-components';
+import { GlobalStyle } from 'styles/global-styles';
 // css style configs
-import theme from 'styles/theme';
 import 'styles/fonts.css'; // import config font define
+import theme from 'styles/theme';
 // diff import
-import { useSelector } from 'react-redux';
-import LanguageProvider from './LanguageProvider';
-import { appSelector } from './store';
+import GlobalSetup from 'components/Layout/GlobalSetup';
 import Loading from 'components/Loading';
 import { Toaster } from 'react-hot-toast';
-import GlobalSetup from 'components/Layout/GlobalSetup';
+import { useSelector } from 'react-redux';
+import LanguageProvider from './LanguageProvider';
 import MapRoutes from './MapRoutes';
+import { appSelector } from './store';
 
 function App() {
   const { loading } = useSelector(appSelector);

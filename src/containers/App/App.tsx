@@ -20,7 +20,6 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalSetup />
         <MapRoutes />
-        {/* // extra config global */}
         {loading && <Loading />}
         <GlobalStyle />
         <Toaster

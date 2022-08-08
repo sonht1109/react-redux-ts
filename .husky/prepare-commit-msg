@@ -1,9 +1,20 @@
 #!/bin/bash
 
-BRANCH=`git branch | grep '^\*' | cut -b3-`
+COMMIT_EDITMSG=$1
 
-echo "$BRANCH"
+addBranchName() {
+  NAME=$(git branch | grep '*' | sed 's/* //') 
+  DESCRIPTION=$(git config branch."$NAME".description)
+  echo "[$NAME]: $(cat $COMMIT_EDITMSG)" > $COMMIT_EDITMSG
+  if [ -n "$DESCRIPTION" ] 
+  then
+     echo "" >> $COMMIT_EDITMSG
+     echo $DESCRIPTION >> $COMMIT_EDITMSG
+  fi 
+}
 
-if [ "$BRANCH" -eq 0 ]; then
-  sed -i "1s/^/[$BRANCH]: " $1
+MERGE=$(cat $COMMIT_EDITMSG|grep -i 'merge'|wc -l)
+
+if [ $MERGE -eq 0 ] ; then
+  addBranchName
 fi

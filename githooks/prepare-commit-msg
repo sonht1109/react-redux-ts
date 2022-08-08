@@ -1,9 +1,25 @@
 #!/bin/bash
-branchPath=$(git symbolic-ref -q HEAD) #Somthing like refs/heads/myBranchName
-branchName=${branchPath##*/}      #Get text behind the last / of the branch path
+#
+# Automatically adds branch name and branch description to every commit message.
+# Modified from the gist here https://gist.github.com/bartoszmajsak/1396344
+#
 
-firstLine=$(head -n1 $1)
+# This way you can customize which branches should be skipped when
+# prepending commit message. 
+if [ -z "$BRANCHES_TO_SKIP" ]; then
+  BRANCHES_TO_SKIP=(master develop)
+fi
 
-if [ -z "$firstLine"  ] ;then #Check that this is not an amend by checking that the first line is empty
-  sed -i "1s/^/$branchName: \n/" $1 #Insert branch name at the start of the commit message file
+# Get branch name and description
+BRANCH_NAME=$(git branch | grep '*' | sed 's/* //')
+
+# Branch name should be excluded from the prepend
+BRANCH_EXCLUDED=$(printf "%s\n" "${BRANCHES_TO_SKIP[@]}" | grep -c "^$BRANCH_NAME$")
+
+# A developer has already prepended the commit in the format [BRANCH_NAME]
+BRANCH_IN_COMMIT=$(grep -c "\[$BRANCH_NAME\]" $1)
+
+
+if [ -n "$BRANCH_NAME" ] && ! [[ $BRANCH_EXCLUDED -eq 1 ]] && ! [[ $BRANCH_IN_COMMIT -ge 1 ]]; then 
+  sed -i.bak -e "1s~^~[$BRANCH_NAME] ~" $1
 fi

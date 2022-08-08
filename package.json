@@ -85,11 +85,5 @@
       "npm run format",
       "git add ."
     ]
-  },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "echo \"[Husky] pre-commit-msg\"",
-      "pre-commit": "echo \"[Husky] pre-commit\""
-    }
   }
 }

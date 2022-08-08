@@ -17,8 +17,9 @@ module.exports = {
     semi: [2, 'always'],
     quotes: [2, 'single'],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/no-empty-interface': 'error',
     'no-empty-pattern': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'no-unused-vars': ['warn', { 'vars': 'all' }]
   },
 };

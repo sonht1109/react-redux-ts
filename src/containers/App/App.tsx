@@ -20,7 +20,6 @@ function App() {
   const Z = '123';
   const A = '123';
   const B = '123';
-    const C = '123';
 
   return (
     <LanguageProvider>

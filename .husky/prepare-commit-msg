@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "SH"
+
 branchPath=$(git symbolic-ref -q HEAD) #Somthing like refs/heads/myBranchName
 branchName=${branchPath##*/}      #Get text behind the last / of the branch path
 

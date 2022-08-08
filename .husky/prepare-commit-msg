@@ -5,7 +5,12 @@ COMMIT_MSG=$1
 addBranchName() {
   NAME=$(git branch | grep '*' | sed 's/* //') 
   DESCRIPTION=$(git config branch."$NAME".description)
-  echo "[$NAME]: $(cat $COMMIT_MSG)" > $COMMIT_MSG
+
+  if [ -n "$NAME" ]
+  then
+    echo "[$NAME]: $(cat $COMMIT_MSG)" > $COMMIT_MSG
+  fi
+
   if [ -n "$DESCRIPTION" ]
   then
      echo "" >> $COMMIT_MSG
@@ -14,8 +19,6 @@ addBranchName() {
 }
 
 MERGE=$(cat $COMMIT_MSG|grep -i 'merge'|wc -l)
-
-echo "$MERGE"
 
 if [ $MERGE -eq 0 ] ; then
   addBranchName

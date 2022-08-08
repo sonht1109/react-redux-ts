@@ -85,5 +85,10 @@
       "npm run format",
       "git add ."
     ]
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "./githooks/script.sh"
+    }
   }
 }

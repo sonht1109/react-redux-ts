@@ -18,4 +18,8 @@ addBranchName() {
   fi 
 }
 
-addBranchName
+MERGE=$(cat $COMMIT_MSG|grep -i 'merge'|wc -l)
+
+if [ $MERGE -eq 0 ] ; then
+  addBranchName
+fi

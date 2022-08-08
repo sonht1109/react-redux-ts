@@ -8,7 +8,7 @@ addBranchName() {
 
   if [ -n "$NAME" ]
   then
-    echo "[$NAME]: $(cat $COMMIT_MSG)" > $COMMIT_MSG
+    echo "$(cat $COMMIT_MSG) BY [$NAME]" > $COMMIT_MSG
   fi
 
   if [ -n "$DESCRIPTION" ]

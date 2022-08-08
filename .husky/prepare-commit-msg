@@ -3,7 +3,9 @@
 branchPath=$(git symbolic-ref -q HEAD)
 branchName=${branchPath##*/}
 
-echo "$branchPath"
+BRANCH=`git branch | grep '^\*' | cut -b3-`
+
+echo "$BRANCH"
 
 if [ -n "$BRANCH_NAME" ]; then
   sed -i "1s/^/[$branchName]: \n/" $1

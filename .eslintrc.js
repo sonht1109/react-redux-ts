@@ -14,12 +14,15 @@ module.exports = {
     es6: true,
   },
   rules: {
-    semi: [2, 'always'],
-    quotes: [2, 'single'],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-empty-interface': 'error',
+    '@typescript-eslint/no-empty-interface': 'off',
     'no-empty-pattern': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    'no-unused-vars': ['warn', { 'vars': 'all' }]
+    'no-unused-vars': ['off'],
+    "@typescript-eslint/no-unused-vars": ['warn', { 'argsIgnorePattern': '^_' }],
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
+    'no-empty-function': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
   },
 };

@@ -16,6 +16,8 @@ module.exports = {
         'style',
         'test',
         'done',
+        'add',
+        'update'
       ],
     ],
   },
